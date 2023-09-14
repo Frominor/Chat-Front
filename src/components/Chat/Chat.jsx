@@ -56,7 +56,7 @@ export default function Chat({ users, messages, socket, roomId, dispatch }) {
     message.text = Value;
     message.roomId = roomId;
     const { data } = await axios.post(
-      "http://localhost:5000/message/edit",
+      "https://localhost:5000/message/edit",
       message
     );
     SetValue("");

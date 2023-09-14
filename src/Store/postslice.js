@@ -9,7 +9,7 @@ export const AsyncUserRegisterThunk = createAsyncThunk(
   "user/Register",
   async (params) => {
     const { data } = await axios.post(
-      "http://localhost:5000/auth/register",
+      "https://localhost:5000/auth/register",
       params
     );
     return data;
@@ -19,7 +19,7 @@ export const AsyncSignInThunk = createAsyncThunk(
   "user/SignIn",
   async (params) => {
     const { data } = await axios.post(
-      "http://localhost:5000/auth/login",
+      "https://localhost:5000/auth/login",
       params
     );
     return data;

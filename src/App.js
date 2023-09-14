@@ -17,7 +17,7 @@ function App() {
   React.useEffect(() => {
     async function Async() {
       const { data } = await axios.get(
-        `http://localhost:5000/auth/getMe/${localStorage.getItem("token")}`
+        `https://localhost:5000/auth/getMe/${localStorage.getItem("token")}`
       );
       if (data.ErrorMessage) {
         dispatch(ReloadPageReducer({ token: null, user: null }));
