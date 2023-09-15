@@ -9,7 +9,7 @@ export const AsyncUserRegisterThunk = createAsyncThunk(
   "user/Register",
   async (params) => {
     const { data } = await axios.post(
-      "https://localhost:5000/auth/register",
+      "https://back-bwzi.vercel.app/auth/register",
       params
     );
     return data;
@@ -19,7 +19,7 @@ export const AsyncSignInThunk = createAsyncThunk(
   "user/SignIn",
   async (params) => {
     const { data } = await axios.post(
-      "https://localhost:5000/auth/login",
+      "https://back-bwzi.vercel.app/auth/login",
       params
     );
     return data;

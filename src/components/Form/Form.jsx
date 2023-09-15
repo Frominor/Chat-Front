@@ -44,7 +44,9 @@ export default function Form() {
       roomId,
       userName,
     });
-    const { data } = await axios.get(`https://localhost:5000/rooms/${roomId}`);
+    const { data } = await axios.get(
+      `https://back-bwzi.vercel.app/rooms/${roomId}`
+    );
     console.log(data);
     dispatch({
       type: "ROOM:JOINED",

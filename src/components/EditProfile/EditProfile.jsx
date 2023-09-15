@@ -59,7 +59,7 @@ export default function EditProfile() {
       obj.user = obj.user[0];
       obj.user.id = State.UserInfo._id;
       const { data } = await axios.post(
-        `https://localhost:5000/file/${JSON.stringify(obj.user)}`,
+        `https://back-bwzi.vercel.app/file/${JSON.stringify(obj.user)}`,
         formdata
       );
       dispatch(ChangeUserInfo(data));
@@ -68,7 +68,7 @@ export default function EditProfile() {
       obj.user[0].id = State.UserInfo._id;
       console.log(obj);
       const { data } = await axios.post(
-        `https://localhost:5000/file/${JSON.stringify(...obj.user)}`
+        `https://back-bwzi.vercel.app/file/${JSON.stringify(...obj.user)}`
       );
       dispatch(ChangeUserInfo(data));
       SetNavigateTo(true);

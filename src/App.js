@@ -17,7 +17,9 @@ function App() {
   React.useEffect(() => {
     async function Async() {
       const { data } = await axios.get(
-        `https://localhost:5000/auth/getMe/${localStorage.getItem("token")}`
+        `https://back-bwzi.vercel.app/auth/getMe/${localStorage.getItem(
+          "token"
+        )}`
       );
       if (data.ErrorMessage) {
         dispatch(ReloadPageReducer({ token: null, user: null }));
