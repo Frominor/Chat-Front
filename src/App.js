@@ -20,7 +20,12 @@ function App() {
         `https://back-bwzi.vercel.app/auth/getMe/${localStorage.getItem(
           "token"
         )}`,
-        { headers: { "Access-Control-Allow-Origin": "*" } }
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+          },
+        }
       );
       if (data.ErrorMessage) {
         dispatch(ReloadPageReducer({ token: null, user: null }));
