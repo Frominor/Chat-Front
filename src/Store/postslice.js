@@ -10,7 +10,8 @@ export const AsyncUserRegisterThunk = createAsyncThunk(
   async (params) => {
     const { data } = await axios.post(
       "https://back-bwzi.vercel.app/auth/register",
-      params
+      params,
+      { headers: { "Access-Control-Allow-Origin": "*" } }
     );
     return data;
   }
@@ -20,7 +21,8 @@ export const AsyncSignInThunk = createAsyncThunk(
   async (params) => {
     const { data } = await axios.post(
       "https://back-bwzi.vercel.app/auth/login",
-      params
+      params,
+      { headers: { "Access-Control-Allow-Origin": "*" } }
     );
     return data;
   }

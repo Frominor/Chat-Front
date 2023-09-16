@@ -19,7 +19,8 @@ function App() {
       const { data } = await axios.get(
         `https://back-bwzi.vercel.app/auth/getMe/${localStorage.getItem(
           "token"
-        )}`
+        )}`,
+        { headers: { "Access-Control-Allow-Origin": "*" } }
       );
       if (data.ErrorMessage) {
         dispatch(ReloadPageReducer({ token: null, user: null }));

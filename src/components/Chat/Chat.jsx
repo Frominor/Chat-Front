@@ -57,7 +57,8 @@ export default function Chat({ users, messages, socket, roomId, dispatch }) {
     message.roomId = roomId;
     const { data } = await axios.post(
       "https://back-bwzi.vercel.app/message/edit",
-      message
+      message,
+      { headers: { "Access-Control-Allow-Origin": "*" } }
     );
     SetValue("");
     dispatch({
